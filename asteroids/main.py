@@ -10,4 +10,3 @@ while game.play:
     pygame.time.wait(20)
     game.display()
     game.update()
-    

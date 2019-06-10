@@ -3,16 +3,18 @@
 import pygame
 from Missile import Missile
 
+
 def alwaysRun():
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:             
+        if event.type == pygame.QUIT:
             pygame.quit()
             quit()
+
 
 def collisions(player, enemies, missiles, score):
     for enemy in enemies:
         if player.collision(enemy):
-            print("Collision")             
+            print("Collision")
             pygame.quit()
             quit()
         for missile in missiles:
@@ -24,12 +26,18 @@ def collisions(player, enemies, missiles, score):
             elif missile.offScreen:
                 score[0] -= 1
                 missiles.remove(missile)
+
+
 lastshot = 0
+
+
 def shoot(window, player, missiles):
     global lastshot
     if pygame.time.get_ticks() - lastshot > 100:
         lastshot = pygame.time.get_ticks()
-        missiles.append(Missile(window, player.x + player.width//2, player.y))
+        missiles.append(Missile(window, player.x + player.width // 2,
+                                player.y))
+
 
 def handleEvents(window, player, enemies, missiles, score):
     keys = pygame.key.get_pressed()
@@ -51,7 +59,3 @@ def handleEvents(window, player, enemies, missiles, score):
         missile.show()
     player.update()
     player.show()
-
-
-
-    
