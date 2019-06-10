@@ -2,7 +2,7 @@
 
 from PhysicsObject import PhysicsObject
 
-kSpeed = 2
+kSpeed = 4
 
 class Player(PhysicsObject):
     def __init__(self, window, x, y):
@@ -12,10 +12,10 @@ class Player(PhysicsObject):
         self.velocity = (0,0)
         self.angle = 0
     def left(self):
-        self.angle += 3
+        self.angle += 7
         self.angle %= 360
     def right(self):
-        self.angle -= 3
+        self.angle -= 7
         self.angle %= 360
     def up(self):
         vector = self.get_vector()

@@ -50,7 +50,7 @@ class PhysicsObject:
         self.y %= screen_height
     def update(self):
         # Check Jump state
-        ticks = (pygame.time.get_ticks() - self.last_time)/1000
+        ticks = (pygame.time.get_ticks() - self.last_time)/1000.0
         self.last_time = pygame.time.get_ticks()
         self.x += self.velocity[0]*ticks
         self.y += self.velocity[1]*ticks

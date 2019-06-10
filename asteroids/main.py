@@ -7,7 +7,7 @@ pygame.init()
 game = Game()
 
 while game.play:
-    pygame.time.wait(5)
+    pygame.time.wait(20)
     game.display()
     game.update()
     
